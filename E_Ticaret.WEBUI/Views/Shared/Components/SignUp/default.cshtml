@@ -1,0 +1,108 @@
+﻿@model CreateMemberViewModel
+
+<div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center" id="exampleModalLabel">Kayıt Ol</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form asp-action="SignUp">
+                    <svg style="color:cornflowerblue" width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-file-person-fill col-md-4 offset-md-4 mb-4" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm-1 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm-3 4c2.623 0 4.146.826 5 1.755V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-1.245C3.854 11.825 5.377 11 8 11z" />
+                    </svg>
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label asp-for="Firstname" class="control-label"></label>
+                            <input asp-for="Firstname" class="form-control" />
+                            <span asp-validation-for="Firstname" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label asp-for="Surname" class="control-label"></label>
+                            <input asp-for="Surname" class="form-control" />
+                            <span asp-validation-for="Surname" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label asp-for="Email" class="control-label"></label>
+                            <input asp-for="Email" type="email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label asp-for="Password" class="control-label"></label>
+                            <input asp-for="Password" type="password" class="form-control" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-12">
+                            <label class="col-form-label font-weight-bold pr-4">Cinsiyet :</label>
+                            <div class="form-check form-check-inline col-md-2 mr-0">
+                                <input asp-for="Gender" value="0" type="radio" class="form-check-input" />
+                                <label for="Cinsiyet" class="form-check-label">Erkek</label>
+                            </div>
+                            <div class="form-check form-check-inline col-md-2 mr-0">
+                                <input asp-for="Gender" value="1" type="radio" class="form-check-input" />
+                                <label for="Cinsiyet" class="form-check-label">Kadın</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label asp-for="Birthdate" class="control-label"></label>
+                            <input asp-for="Birthdate" type="date" class="form-control" />
+                            <span asp-validation-for="Birthdate" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label asp-for="PhoneNumber" class="control-label"></label>
+                            <input asp-for="PhoneNumber" class="form-control" />
+                            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label asp-for="MobilePhoneNumber" class="control-label"></label>
+                            <input asp-for="MobilePhoneNumber" class="form-control" />
+                            <span asp-validation-for="MobilePhoneNumber" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <label asp-for="CountryId"></label>
+                            <select class="w-100" asp-for="CountryId" asp-items="@(new SelectList(ViewBag.ListOfCountry,"Id","Name"))">
+                                <option>Lütfen Ülke Seçiniz ...</option>
+                            </select>
+                            <span asp-validation-for="CountryId" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="LocationId"></label>
+                            <select class="w-100" asp-for="LocationId" asp-items="@(new SelectList(ViewBag.ListOfLocation,"Id","Name"))">
+                                <option>Lütfen Şehir Seçiniz ...</option>
+                            </select>
+                            <span asp-validation-for="LocationId" class="text-danger"></span>
+                        </div>
+                    </div>
+                    @*<div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label asp-for="ReferredMemberId" class="control-label"></label>
+                                <input asp-for="ReferredMemberId" class="form-control" />
+                                <span asp-validation-for="ReferredMemberId" class="text-danger"></span>
+                            </div>
+                        </div>*@
+                    <div class="form-group col-md-4 offset-md-4">
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Kayıt Ol</button>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Geri Dön</button>
+            </div>
+        </div>
+    </div>
+</div>
+

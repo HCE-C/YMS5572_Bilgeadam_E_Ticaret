@@ -1,0 +1,10 @@
+﻿@model List<CategoryViewModel>
+
+
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li><a class="category" asp-controller="Shop" asp-action="Index" asp-route-catInfo="@item.Id,@item.Name" id="@item.Id">@item.Name</a></li>
+        }
+
+    </ul>

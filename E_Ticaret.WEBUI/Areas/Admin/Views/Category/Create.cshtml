@@ -1,0 +1,126 @@
+﻿@model E_Ticaret.WEBUI.Areas.Admin.Models.CategoryViewModels.CreateCategoryViewModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>CreateCategoryViewModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input asp-for="Status" type="hidden" value="1" />
+            <div class="form-row">
+                <div class="form-group  col-md-6">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="Slug" class="control-label"></label>
+                    <input asp-for="Slug" class="form-control" />
+                    <span asp-validation-for="Slug" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="SortOrder" class="control-label"></label>
+                    <input asp-for="SortOrder" class="form-control" />
+                    <span asp-validation-for="SortOrder" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="DistributorCode" class="control-label"></label>
+                    <input asp-for="DistributorCode" class="form-control" />
+                    <span asp-validation-for="DistributorCode" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="Percent" class="control-label"></label>
+                    <input asp-for="Percent" class="form-control" />
+                    <span asp-validation-for="Percent" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="">Resim</label>
+                    <input name="Files" class="form-control-file" type="file" />
+                    <span class="text-danger">
+                        @if (TempData["Message"] != null)
+                        {@TempData["Message"]}
+                    </span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="Distributor" class="control-label"></label>
+                    <input asp-for="Distributor" class="form-control" />
+                    <span asp-validation-for="Distributor" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="DisplayShowcaseContent" class="control-label"></label>
+                    <input asp-for="DisplayShowcaseContent" class="form-control" />
+                    <span asp-validation-for="DisplayShowcaseContent" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="ShowcaseContent" class="control-label"></label>
+                    <input asp-for="ShowcaseContent" class="form-control" />
+                    <span asp-validation-for="ShowcaseContent" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="ShowcaseContentDisplayType" class="control-label"></label>
+                    <input asp-for="ShowcaseContentDisplayType" class="form-control" />
+                    <span asp-validation-for="ShowcaseContentDisplayType" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="HasChildren" class="control-label"></label>
+                    <input asp-for="HasChildren" class="form-control" />
+                    <span asp-validation-for="HasChildren" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="MetaKeywords" class="control-label"></label>
+                    <input asp-for="MetaKeywords" class="form-control" />
+                    <span asp-validation-for="MetaKeywords" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="MetaDescription" class="control-label"></label>
+                    <input asp-for="MetaDescription" class="form-control" />
+                    <span asp-validation-for="MetaDescription" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="PageTitle" class="control-label"></label>
+                    <input asp-for="PageTitle" class="form-control" />
+                    <span asp-validation-for="PageTitle" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="ParentId" class="control-label"></label>
+                    <input asp-for="ParentId" class="form-control" />
+                    <span asp-validation-for="ParentId" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="Attachment" class="control-label"></label>
+                    <input asp-for="Attachment" class="form-control" />
+                    <span asp-validation-for="Attachment" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

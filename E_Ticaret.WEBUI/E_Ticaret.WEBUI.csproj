@@ -1,0 +1,154 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Ogani\blog-details.html" />
+    <None Include="wwwroot\Ogani\blog.html" />
+    <None Include="wwwroot\Ogani\checkout.html" />
+    <None Include="wwwroot\Ogani\contact.html" />
+    <None Include="wwwroot\Ogani\css\bootstrap.min.css" />
+    <None Include="wwwroot\Ogani\css\elegant-icons.css" />
+    <None Include="wwwroot\Ogani\css\font-awesome.min.css" />
+    <None Include="wwwroot\Ogani\css\jquery-ui.min.css" />
+    <None Include="wwwroot\Ogani\css\nice-select.css" />
+    <None Include="wwwroot\Ogani\css\owl.carousel.min.css" />
+    <None Include="wwwroot\Ogani\css\slicknav.min.css" />
+    <None Include="wwwroot\Ogani\css\style.css" />
+    <None Include="wwwroot\Ogani\fonts\ElegantIcons.eot" />
+    <None Include="wwwroot\Ogani\fonts\ElegantIcons.svg" />
+    <None Include="wwwroot\Ogani\fonts\ElegantIcons.ttf" />
+    <None Include="wwwroot\Ogani\fonts\ElegantIcons.woff" />
+    <None Include="wwwroot\Ogani\fonts\fontawesome-webfont.eot" />
+    <None Include="wwwroot\Ogani\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\Ogani\fonts\fontawesome-webfont.ttf" />
+    <None Include="wwwroot\Ogani\fonts\fontawesome-webfont.woff" />
+    <None Include="wwwroot\Ogani\fonts\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\Ogani\fonts\FontAwesome.otf" />
+    <None Include="wwwroot\Ogani\img\banner\banner-1.jpg" />
+    <None Include="wwwroot\Ogani\img\banner\banner-2.jpg" />
+    <None Include="wwwroot\Ogani\img\blog\blog-1.jpg" />
+    <None Include="wwwroot\Ogani\img\blog\blog-2.jpg" />
+    <None Include="wwwroot\Ogani\img\blog\blog-3.jpg" />
+    <None Include="wwwroot\Ogani\img\blog\blog-4.jpg" />
+    <None Include="wwwroot\Ogani\img\blog\blog-5.jpg" />
+    <None Include="wwwroot\Ogani\img\blog\blog-6.jpg" />
+    <None Include="wwwroot\Ogani\img\blog\details\details-author.jpg" />
+    <None Include="wwwroot\Ogani\img\blog\details\details-hero.jpg" />
+    <None Include="wwwroot\Ogani\img\blog\details\details-pic.jpg" />
+    <None Include="wwwroot\Ogani\img\blog\sidebar\sr-1.jpg" />
+    <None Include="wwwroot\Ogani\img\blog\sidebar\sr-2.jpg" />
+    <None Include="wwwroot\Ogani\img\blog\sidebar\sr-3.jpg" />
+    <None Include="wwwroot\Ogani\img\breadcrumb.jpg" />
+    <None Include="wwwroot\Ogani\img\cart\cart-1.jpg" />
+    <None Include="wwwroot\Ogani\img\cart\cart-2.jpg" />
+    <None Include="wwwroot\Ogani\img\cart\cart-3.jpg" />
+    <None Include="wwwroot\Ogani\img\categories\cat-1.jpg" />
+    <None Include="wwwroot\Ogani\img\categories\cat-2.jpg" />
+    <None Include="wwwroot\Ogani\img\categories\cat-3.jpg" />
+    <None Include="wwwroot\Ogani\img\categories\cat-4.jpg" />
+    <None Include="wwwroot\Ogani\img\categories\cat-5.jpg" />
+    <None Include="wwwroot\Ogani\img\featured\feature-1.jpg" />
+    <None Include="wwwroot\Ogani\img\featured\feature-2.jpg" />
+    <None Include="wwwroot\Ogani\img\featured\feature-3.jpg" />
+    <None Include="wwwroot\Ogani\img\featured\feature-4.jpg" />
+    <None Include="wwwroot\Ogani\img\featured\feature-5.jpg" />
+    <None Include="wwwroot\Ogani\img\featured\feature-6.jpg" />
+    <None Include="wwwroot\Ogani\img\featured\feature-7.jpg" />
+    <None Include="wwwroot\Ogani\img\featured\feature-8.jpg" />
+    <None Include="wwwroot\Ogani\img\hero\banner.jpg" />
+    <None Include="wwwroot\Ogani\img\language.png" />
+    <None Include="wwwroot\Ogani\img\latest-product\lp-1.jpg" />
+    <None Include="wwwroot\Ogani\img\latest-product\lp-2.jpg" />
+    <None Include="wwwroot\Ogani\img\latest-product\lp-3.jpg" />
+    <None Include="wwwroot\Ogani\img\logo.png" />
+    <None Include="wwwroot\Ogani\img\payment-item.png" />
+    <None Include="wwwroot\Ogani\img\product\details\product-details-1.jpg" />
+    <None Include="wwwroot\Ogani\img\product\details\product-details-2.jpg" />
+    <None Include="wwwroot\Ogani\img\product\details\product-details-3.jpg" />
+    <None Include="wwwroot\Ogani\img\product\details\product-details-4.jpg" />
+    <None Include="wwwroot\Ogani\img\product\details\product-details-5.jpg" />
+    <None Include="wwwroot\Ogani\img\product\details\thumb-1.jpg" />
+    <None Include="wwwroot\Ogani\img\product\details\thumb-2.jpg" />
+    <None Include="wwwroot\Ogani\img\product\details\thumb-3.jpg" />
+    <None Include="wwwroot\Ogani\img\product\details\thumb-4.jpg" />
+    <None Include="wwwroot\Ogani\img\product\discount\pd-1.jpg" />
+    <None Include="wwwroot\Ogani\img\product\discount\pd-2.jpg" />
+    <None Include="wwwroot\Ogani\img\product\discount\pd-3.jpg" />
+    <None Include="wwwroot\Ogani\img\product\discount\pd-4.jpg" />
+    <None Include="wwwroot\Ogani\img\product\discount\pd-5.jpg" />
+    <None Include="wwwroot\Ogani\img\product\discount\pd-6.jpg" />
+    <None Include="wwwroot\Ogani\img\product\product-1.jpg" />
+    <None Include="wwwroot\Ogani\img\product\product-10.jpg" />
+    <None Include="wwwroot\Ogani\img\product\product-11.jpg" />
+    <None Include="wwwroot\Ogani\img\product\product-12.jpg" />
+    <None Include="wwwroot\Ogani\img\product\product-2.jpg" />
+    <None Include="wwwroot\Ogani\img\product\product-3.jpg" />
+    <None Include="wwwroot\Ogani\img\product\product-4.jpg" />
+    <None Include="wwwroot\Ogani\img\product\product-5.jpg" />
+    <None Include="wwwroot\Ogani\img\product\product-6.jpg" />
+    <None Include="wwwroot\Ogani\img\product\product-7.jpg" />
+    <None Include="wwwroot\Ogani\img\product\product-8.jpg" />
+    <None Include="wwwroot\Ogani\img\product\product-9.jpg" />
+    <None Include="wwwroot\Ogani\index.html" />
+    <None Include="wwwroot\Ogani\js\bootstrap.min.js" />
+    <None Include="wwwroot\Ogani\js\jquery-3.3.1.min.js" />
+    <None Include="wwwroot\Ogani\js\jquery-ui.min.js" />
+    <None Include="wwwroot\Ogani\js\jquery.nice-select.min.js" />
+    <None Include="wwwroot\Ogani\js\jquery.slicknav.js" />
+    <None Include="wwwroot\Ogani\js\main.js" />
+    <None Include="wwwroot\Ogani\js\mixitup.min.js" />
+    <None Include="wwwroot\Ogani\js\owl.carousel.min.js" />
+    <None Include="wwwroot\Ogani\main.html" />
+    <None Include="wwwroot\Ogani\readme.txt" />
+    <None Include="wwwroot\Ogani\sass\style.scss" />
+    <None Include="wwwroot\Ogani\sass\_base.scss" />
+    <None Include="wwwroot\Ogani\sass\_blog-details.scss" />
+    <None Include="wwwroot\Ogani\sass\_blog-sidebar.scss" />
+    <None Include="wwwroot\Ogani\sass\_blog.scss" />
+    <None Include="wwwroot\Ogani\sass\_breadcrumb.scss" />
+    <None Include="wwwroot\Ogani\sass\_checkout.scss" />
+    <None Include="wwwroot\Ogani\sass\_contact.scss" />
+    <None Include="wwwroot\Ogani\sass\_footer.scss" />
+    <None Include="wwwroot\Ogani\sass\_header.scss" />
+    <None Include="wwwroot\Ogani\sass\_hero.scss" />
+    <None Include="wwwroot\Ogani\sass\_home-page.scss" />
+    <None Include="wwwroot\Ogani\sass\_mixins.scss" />
+    <None Include="wwwroot\Ogani\sass\_responsive.scss" />
+    <None Include="wwwroot\Ogani\sass\_shop-details.scss" />
+    <None Include="wwwroot\Ogani\sass\_shop-grid.scss" />
+    <None Include="wwwroot\Ogani\sass\_shoping-cart.scss" />
+    <None Include="wwwroot\Ogani\sass\_sidebar.scss" />
+    <None Include="wwwroot\Ogani\sass\_variable.scss" />
+    <None Include="wwwroot\Ogani\shop-details.html" />
+    <None Include="wwwroot\Ogani\shop-grid.html" />
+    <None Include="wwwroot\Ogani\shoping-cart.html" />
+    <None Include="wwwroot\Ogani\Source\bootstrap-4.4.1-dist.zip" />
+    <None Include="wwwroot\Ogani\Source\font-awesome-4.7.0.zip" />
+    <None Include="wwwroot\Ogani\Source\jquery-nice-select-1.1.0.zip" />
+    <None Include="wwwroot\Ogani\Source\jquery-ui-1.12.1.zip" />
+    <None Include="wwwroot\Ogani\Source\OwlCarousel2-2.3.4.zip" />
+    <None Include="wwwroot\Ogani\Source\sass.zip" />
+    <None Include="wwwroot\Ogani\Source\SlickNav-master.zip" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.9" />
+    <PackageReference Include="Microsoft.Extensions.Http.Polly" Version="3.1.9" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+    <PackageReference Include="Refit.HttpClientFactory" Version="5.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\E_Ticaret.Common\E_Ticaret.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="wwwroot\uploads\" />
+  </ItemGroup>
+
+</Project>

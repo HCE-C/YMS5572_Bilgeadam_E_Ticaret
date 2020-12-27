@@ -1,0 +1,61 @@
+﻿@{ 
+    string active = "";
+    if (ViewData["Active"] != null)
+    {
+        active = ViewData["Active"]?.ToString();
+    }
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/twitter-bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    @RenderSection("Css", false)
+</head>
+<body>
+    <header>
+        <div class="navbar navbar-expand-md navbar-dark bg-primary">
+            <a class="navbar-brand" href="/Shop/Index">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active @(active == "User" ? "bg-dark badge-pill" : "")">
+                        <a class="nav-link" href="/Admin/Main/Index">User Paneli</a>
+                    </li>
+                    <li class="nav-item active  @(active == "Category" ? "bg-dark badge-pill" : "")">
+                        <a class="nav-link" href="/Admin/Category/Index">Kategori Paneli</a>
+                    </li>
+                    <li class="nav-item active @(active == "Product" ? "bg-dark badge-pill" : "")">
+                        <a class="nav-link" href="/Admin/Product/Index">Ürün Paneli</a>
+                    </li>
+                    <li class="nav-item active @(active == "Geolocation" ? "bg-dark badge-pill" : "")">
+                        <a class="nav-link" href="/Admin/Geolocation/Index">Ülke/Şehir/Bölge</a>
+                    </li>
+                    <li class="nav-item active @(active == "MailList" ? "bg-dark badge-pill" : "")">
+                        <a class="nav-link" href="/Admin/MailList/Index">Mail Listesi</a>
+                    </li>
+                </ul>
+                <span class="navbar-text">
+                    Admin Panel
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            @RenderBody()
+        </div>
+    </main>
+    <script src="~/jquery/jquery.min.js"></script>
+    <script src="~/twitter-bootstrap/js/bootstrap.bundle.min.js"></script>
+    @RenderSection("Scripts", false)
+
+</body>
+</html>

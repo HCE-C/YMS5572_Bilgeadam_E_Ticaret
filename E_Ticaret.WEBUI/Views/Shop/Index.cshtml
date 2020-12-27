@@ -1,0 +1,216 @@
+﻿@model List<ProductViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_ShopLayout.cshtml";
+}
+
+
+<section class="product spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-5">
+                <div class="sidebar">
+                    <div class="sidebar__item">
+                        <h4>Kategoriler</h4>
+                        <ul>
+                            @await Component.InvokeAsync("SideBar")
+                        </ul>
+                    </div>
+                    <div class="sidebar__item">
+                        <h4>Fiyat Aralığı</h4>
+                        <div class="price-range-wrap">
+                            <div class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"
+                                 data-min="0" data-max="540">
+                                <div class="ui-slider-range ui-corner-all ui-widget-header"></div>
+                                <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
+                                <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
+                            </div>
+                            <div class="range-slider">
+                                <div class="price-input">
+                                    <input type="text" id="minamount">
+                                    <input type="text" id="maxamount">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sidebar__item sidebar__item__color--option">
+                        <h4>Renkler</h4>
+                        <div class="sidebar__item__color sidebar__item__color--white">
+                            <label for="white">
+                                Beyaz
+                                <input type="radio" id="white">
+                            </label>
+                        </div>
+                        <div class="sidebar__item__color sidebar__item__color--gray">
+                            <label for="gray">
+                                Gri
+                                <input type="radio" id="gray">
+                            </label>
+                        </div>
+                        <div class="sidebar__item__color sidebar__item__color--red">
+                            <label for="red">
+                                Kırmızı
+                                <input type="radio" id="red">
+                            </label>
+                        </div>
+                        <div class="sidebar__item__color sidebar__item__color--black">
+                            <label for="black">
+                                Siyah
+                                <input type="radio" id="black">
+                            </label>
+                        </div>
+                        <div class="sidebar__item__color sidebar__item__color--blue">
+                            <label for="blue">
+                                Mavi
+                                <input type="radio" id="blue">
+                            </label>
+                        </div>
+                        <div class="sidebar__item__color sidebar__item__color--green">
+                            <label for="green">
+                                Yeşil
+                                <input type="radio" id="green">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-7">
+                <div class="filter__item">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-5">
+                            <div class="filter__sort">
+                                <span>Sort By</span>
+                                <select>
+                                    <option value="0">Default</option>
+                                    <option value="0">Default</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                            <div class="filter__found">
+                                <h6><span>16</span> Products found</h6>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-3">
+                            <div class="filter__option">
+                                <span class="icon_grid-2x2"></span>
+                                <span class="icon_ul"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-lg-4 col-md-6 col-sm-6 border">
+                            <div class="product__item">
+                                <img src="@item.Pimage.Filename" />
+                                <div class="product__item__pic set-bg" data-setbg="'~'+@item.Pimage.Filename" style="width:30px;height:20px">
+                                </div>
+                                <div class="product__item__text mt-0">
+                                    <h6><a href="#">@item.Name</a></h6>
+                                    <h5 class="itemPrice">
+                                        @item.Price1
+                                    </h5>
+                                    <h5 align="center" class="mt-4">
+                                        <span class="btn minus" data-id="@item.Id">
+                                            <svg width="3em" height="2em" viewBox="0 0 16 16" class="bi bi-cart-dash-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM4 14a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm7 0a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM6.5 7a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4z" />
+                                            </svg>
+                                        </span>
+                                        <span class="text-primary">
+                                            @{
+                                                var index = item.Id > 0 ? item.Id.ToString() : "0";
+                                            }
+                                            @ViewData[index]
+                                        </span>
+                                        <span class="btn plus" data-id="@item.Id">
+                                            <svg width="3em" height="2em" viewBox="0 0 16 16" class="bi bi-cart-plus-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM4 14a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm7 0a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9V5.5z" />
+                                            </svg>
+                                        </span>
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+                <div class="product__pagination">
+                    <a href="#">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#"><i class="fa fa-long-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Js
+{
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('span').on('click', function () {
+                var btnCart = $(this);
+                var pid = btnCart.attr('data-id');
+                var cond = btnCart.hasClass('minus');
+                if (cond) {
+                    $.ajax({
+                        url: "@Url.Action("RemoveCart","Shop")",
+                        type: "GET",
+                        dataType: "Json",
+                        data: { id: pid},
+                        success: function (resp) {
+                            $(btnCart).siblings(":eq(0)").html(resp.quantity)
+
+                            var price = 0;
+                            var count = 0;
+                            $("h5 span:nth-child(2)").each(function (index, element) {
+                                var p = $(this).parent().siblings(":eq(1)").html();
+                                var c = element.innerHTML;
+                                price += p * c;
+                                if (parseInt(c) > 0) {
+                                    count += 1;
+                                }
+                            });
+
+                            $('#cartPrice').html(price + " TL");
+                            $('#cartCount').html(count);
+
+                        }
+                    });
+                }
+                else {
+                    $.ajax({
+                        url: "@Url.Action("AddCart","Shop")",
+                        type: "GET",
+                        dataType: "JSON",
+                        data: { id: pid },
+                        success: function (resp) {
+
+                            $(btnCart).siblings(":eq(1)").html(resp.quantity);
+
+                            var price = 0;
+                            var count = 0;
+                            $("h5 span:nth-child(2)").each(function (index, element) {
+                                var p = $(this).parent().siblings(":eq(1)").html();
+                                var c = element.innerHTML;
+                                price += p * c;
+                                if (parseInt(c) > 0) {
+                                    count += 1;
+                                }
+                            });
+
+                            $('#cartPrice').html(price + " TL");
+                            $('#cartCount').html(count);
+                        }
+
+                    })
+                }
+            });
+
+        });
+    </script>
+}

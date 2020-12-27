@@ -1,0 +1,50 @@
+﻿@model List<CategoryViewModel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section Css{
+    <style type="text/css">
+        .table-image > td, th {
+            vertical-align: middle;
+        }
+    </style>
+}
+
+<h1 class="">Index</h1>
+
+<a class="btn btn-primary" asp-action="Create">Create</a>
+
+<div class="text-dange"><p class="text-right">@TempData["Message"]</p></div>
+
+<table class="table table-bordered table-">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Kategori Adı</th>
+            <th>Durum</th>
+            <th>Üst Kategorisi(Parent)</th>
+            <th>Kategori Resmi</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            String parentName = item.ParentId != null ? Model.FirstOrDefault(x => x.Id == item.ParentId).Name : "";
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Status</td>
+                <td>@parentName</td>
+                <td><img src="@item.ImageFilename" alt="kategori resmi" width="100" height="100"/></td>
+                <td>
+                    <a class="btn btn-sm btn-success" asp-action="Update" asp-route-id="@item.Id">Güncelle</a>
+                    <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@item.Id">Sil</a>
+                </td>
+            </tr>
+            parentName = "";
+        }
+    </tbody>
+</table>

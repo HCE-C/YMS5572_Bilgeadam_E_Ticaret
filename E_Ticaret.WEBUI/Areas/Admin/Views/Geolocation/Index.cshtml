@@ -1,0 +1,97 @@
+﻿@model MasterGEOVM
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row mt-5">
+
+    <div class="col-md-3">
+        <h1>Ülke</h1>
+        <table class="table table-bordered table-sm mb-0">
+            <thead>
+                <tr>
+                    <th>Ülke Adı</th>
+                    <th>Durum</th>
+                    <th>İşlemler</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.CountryViewModel)
+                {
+                    <tr>
+                        <td>@item.Name</td>
+                        <td>@item.Status</td>
+                        <td>
+                            <a asp-action="Delete" asp-route-id="@item.Id" asp-route-name="Country" class="badge badge-danger">Pasif</a>
+                            <a asp-action="UpdateCountry" asp-route-id="@item.Id" class="badge badge-warning">Güncelle</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <a asp-action="UpdateCountry" class="btn btn-block btn-primary">Yeni Kayıt Ekle</a>
+    </div>
+
+    <div class="col-md-4">
+        <h1>Şehir</h1>
+        <table class="table table-sm table-bordered mb-0">
+            <thead>
+                <tr>
+                    <th>Şehir</th>
+                    <th>Ülke</th>
+                    <th>Bölge</th>
+                    <th>Durum</th>
+                    <th>İşlemler</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.LocationViewModel)
+                {
+                    <tr>
+                        <td>@item.Name</td>
+                        <td>@item.Country.Name</td>
+                        <td>@item.Region.Name</td>
+                        <td>@item.Status</td>
+                        <td>
+                            <a asp-action="Delete" asp-route-id="@item.Id" asp-route-name="Location" class="badge badge-danger">Pasif</a>
+                            <a asp-action="UpdateLocation" asp-route-id="@item.Id" class="badge badge-warning">Güncelle</a>
+                        </td>
+                    </tr>
+
+                }
+                <tr>
+            </tbody>
+        </table>
+        <a asp-action="UpdateLocation" class="btn btn-block btn-primary">Yeni Kayıt Ekle</a>
+    </div>
+
+    <div class="col-md-3">
+        <h1>Bölge</h1>
+        <table class="table table-sm table-bordered mb-0">
+            <thead>
+                <tr>
+                    <th>Bölge Adı</th>
+                    <th>Durum</th>
+                    <th>İşlemler</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.RegionViewModel)
+                {
+                    <tr>
+                        <td>@item.Name</td>
+                        <td>@item.Status</td>
+                        <td>
+                            <a asp-action="Delete" asp-route-id="@item.Id" asp-route-name="Region" class="badge badge-danger">Pasif</a>
+                            <a asp-action="UpdateRegion" asp-route-id="@item.Id"  class="badge badge-warning">Güncelle</a>
+                        </td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+        <a asp-action="UpdateRegion" class="btn btn-block btn-primary">Yeni Kayıt Ekle</a>
+    </div>
+</div>
